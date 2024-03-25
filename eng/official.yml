@@ -81,7 +81,7 @@ extends:
           continueOnError: true
         - template: /eng/analyze-compliance.yml@self
           parameters:
-            SoftwareVersion: '17.0'
+            SoftwareVersion: '1.0'
         - task: PublishSymbols@2
           displayName: Create Symbol Index
           inputs:
