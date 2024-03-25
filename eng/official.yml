@@ -72,10 +72,11 @@ extends:
         - task: CopyFiles@2
           displayName: Copy DLLs for Compliance checks
           inputs:
-            SourceFolder: '$(Build.SourcesDirectory)\artifacts\bin'
+            SourceFolder: '$(Build.SourcesDirectory)\artifacts'
             Contents: |
-              Microsoft.VisualStudio.ProjectSystem.Tools\**\Microsoft.VisualStudio.ProjectSystem.Tools*.dll
-              Microsoft.VisualStudio.ProjectSystem.Tools\**\Microsoft.VisualStudio.ProjectSystem.Tools*.pdb
+              bin\Microsoft.VisualStudio.ProjectSystem.Tools\**\Microsoft.VisualStudio.ProjectSystem.Tools*.dll
+              bin\Microsoft.VisualStudio.ProjectSystem.Tools\**\Microsoft.VisualStudio.ProjectSystem.Tools*.pdb
+              VSSetup\**\Microsoft.VisualStudio.ProjectSystem.Tools.vsix
             TargetFolder: '$(Build.SourcesDirectory)\artifacts\DLLs'
           continueOnError: true
         - template: /eng/analyze-compliance.yml@self
