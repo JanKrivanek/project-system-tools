@@ -64,7 +64,7 @@ extends:
             filename: eng\common\CIBuild.cmd
             arguments: -configuration $(BuildConfiguration) /p:OfficialBuildId=$(BUILD.BUILDNUMBER) /p:DotNetSignType=$(SignType) /p:DotNetSymbolServerTokenMsdl=$(microsoft-symbol-server-pat) /p:DotNetSymbolServerTokenSymWeb=$(symweb-symbol-server-pat)
             failOnStandardError: true
-        - template: common\templates\steps\generate-sbom.yml
+        - template: /eng/common/templates-official/steps/generate-sbom.yml@self
         - task: CopyFiles@2
           displayName: Copy DLLs for Compliance checks
           inputs:
