@@ -25,7 +25,7 @@ extends:
       tsa:
         enabled: true
         onboard: true
-        configFile: $(Build.SourcesDirectory)\build\TSAConfig.gdntsa
+        configFile: $(Build.SourcesDirectory)\eng\TSAConfig.gdntsa
       binskim:
         enabled: true
       credscan:
@@ -78,7 +78,7 @@ extends:
               Microsoft.VisualStudio.ProjectSystem.Tools\**\Microsoft.VisualStudio.ProjectSystem.Tools*.pdb
             TargetFolder: '$(Build.SourcesDirectory)\artifacts\DLLs'
           continueOnError: true
-        - template: /build/analyze-compliance.yml@self
+        - template: /eng/analyze-compliance.yml@self
           parameters:
             SoftwareVersion: '17.0'
         - task: PublishSymbols@2
