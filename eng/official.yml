@@ -60,6 +60,10 @@ extends:
             targetPath: $(Build.SourcesDirectory)/artifacts/
             artifactName: $(Build.BuildNumber)
             condition: succeededOrFailed()
+          - output: pipelineArtifact
+            displayName: Publish Build Artifacts to drop folder
+            targetPath: $(DropRoot)\Roslyn\project-system-tools
+            artifactName: $(Build.BuildNumber)
 
         steps:
         - task: BatchScript@1
