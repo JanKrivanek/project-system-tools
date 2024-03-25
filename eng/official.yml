@@ -74,8 +74,8 @@ extends:
           inputs:
             SourceFolder: '$(Build.SourcesDirectory)\artifacts'
             Contents: |
-              bin\Microsoft.VisualStudio.ProjectSystem.Tools\**\Microsoft.VisualStudio.ProjectSystem.Tools*.dll
-              bin\Microsoft.VisualStudio.ProjectSystem.Tools\**\Microsoft.VisualStudio.ProjectSystem.Tools*.pdb
+              bin\ProjectSystemTools\**\Microsoft.VisualStudio.ProjectSystem.Tools*.dll
+              bin\ProjectSystemTools\**\Microsoft.VisualStudio.ProjectSystem.Tools*.pdb
               VSSetup\**\Microsoft.VisualStudio.ProjectSystem.Tools.vsix
             TargetFolder: '$(Build.SourcesDirectory)\artifacts\DLLs'
           continueOnError: true
